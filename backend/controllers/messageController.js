@@ -91,7 +91,6 @@ const voteMessage = async (req, res) => {
   try {
     const message = await Message.findById(messageId);
     const senderId = message.sender.toString();
-    console.log(senderId, " ", req.user._id);
     if (!message) {
       return res.status(404).json({ error: "Message not found" });
     }

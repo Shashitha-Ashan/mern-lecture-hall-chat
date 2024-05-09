@@ -18,7 +18,6 @@ function AdminPanel() {
     try {
       const res = await api.get("api/admin/allusers");
       setusers(res.data);
-      console.log(users);
     } catch (error) {
       console.log(error);
     }
@@ -27,7 +26,6 @@ function AdminPanel() {
     try {
       const res = await api.get("api/admin/allreports");
       setReports(res.data);
-      console.log(res.data);
     } catch (error) {
       console.log(error);
     }

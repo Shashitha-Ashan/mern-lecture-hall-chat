@@ -7,7 +7,6 @@ export default function AdminRoute({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(userData);
     if (userData.role != "admin") {
       navigate("/", { replace: true });
     }

@@ -63,7 +63,6 @@ function ChatBubble({
 
   // vote a message
   async function voteMessage() {
-    console.log(messageId);
     try {
       const res = await api.get("/api/c/vote", {
         params: { userId: userData.id, messageId: messageId },

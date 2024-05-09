@@ -18,7 +18,6 @@ function Signup() {
   const navigate = useNavigate();
 
   async function handleSignIn() {
-    console.log(year);
     if (password === confirmPassword) {
       try {
         const res = await api.post("/api/user/register", {
@@ -95,7 +94,6 @@ function Signup() {
             name=""
             id=""
             onChange={(e) => {
-              console.log(year);
               setYear(e.target.value);
             }}
           >

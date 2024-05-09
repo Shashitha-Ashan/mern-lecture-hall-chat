@@ -16,7 +16,6 @@ export function ChatIdProvider({ children }) {
 
   function updateChatId(id) {
     setChatId(id);
-    console.log(chatId);
   }
   useEffect(() => {}, [chatId]);
   return (

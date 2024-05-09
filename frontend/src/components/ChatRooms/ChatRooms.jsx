@@ -41,7 +41,6 @@ function ChatRooms() {
 
   useEffect(() => {
     setFilterData(filteredData);
-    console.log(filteredData);
   }, [searchWord, chatRooms]);
 
   const filteredData = chatRooms.filter((item) => {
@@ -148,7 +147,6 @@ function DeleteModal({ onClose, roomName, id }) {
   const [confirmation, setconfirmation] = useState(null);
 
   async function deleteFormSubmit() {
-    console.log(confirmation);
     if (confirmation.toLowerCase() == "confirm") {
       try {
         const res = await api.delete(`/api/rooms/${id}`);

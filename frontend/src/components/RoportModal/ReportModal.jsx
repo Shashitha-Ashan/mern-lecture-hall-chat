@@ -17,7 +17,6 @@ function ReportModal({ onClose, name, message, messageId }) {
         messageid: messageId,
         reason,
       });
-      console.log(res);
       setresult(res.data.message);
     } catch (error) {
       setresult(error.message);

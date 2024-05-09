@@ -7,7 +7,6 @@ export default function LecturerProtectedRoute({ children }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(userData);
     if (userData.role != "lecturer") {
       navigate("/login", { replace: true });
     }

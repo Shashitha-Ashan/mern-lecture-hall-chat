@@ -19,7 +19,6 @@ function CreateNew() {
         passcode,
         year: selectedYear,
       });
-      console.log(res.data);
       setError("Chat room created");
       setName("");
       setPasscode("");

@@ -67,7 +67,6 @@ const changePassword = async (req, res) => {
 const registerUser = async (req, res) => {
   const { username, email, password, role, year } = req.body;
   try {
-    console.log(req.body);
     const newUser = await User.register(username, email, password, role, year);
     const userId = newUser._id;
     const taken = createToken(userId);

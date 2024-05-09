@@ -45,9 +45,7 @@ export function UserRoleProvider({ children }) {
       setLoading(false);
     }
   }, []);
-  useEffect(() => {
-    console.log(role);
-  }, [role]);
+  useEffect(() => {}, [role]);
 
   return loading ? null : (
     <UpdateRoleContext.Provider value={updateUserData}>

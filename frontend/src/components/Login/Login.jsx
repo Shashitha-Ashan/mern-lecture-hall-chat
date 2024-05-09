@@ -19,7 +19,6 @@ function LoginPage() {
   const navigate = useNavigate();
   useEffect(() => {
     if (userData) {
-      console.log(userData);
       setError("You are already logged");
     }
   }, [userData]);

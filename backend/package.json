@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "test": "server.js",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "ashan",
   "license": "ISC",

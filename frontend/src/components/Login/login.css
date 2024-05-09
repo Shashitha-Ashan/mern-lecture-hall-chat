@@ -1,0 +1,68 @@
+.login-page-container form {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  min-width: 200px;
+}
+.main-conatiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.login-page-container {
+  background-color: var(--accent-color);
+  padding: 20px;
+  border-radius: 10%;
+}
+.login-page-container form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.login-page-container form button {
+  font-size: 1rem;
+  margin-top: 10px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+}
+.fogot-password {
+  font-size: 0.9rem;
+}
+.signup {
+  font-size: 0.9rem;
+}
+form a {
+  text-decoration: none;
+}
+
+.login-page-container {
+  position: relative;
+  background: #00b8e6;
+  border-radius: 0.4em;
+}
+
+.login-page-container:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 61px solid transparent;
+  border-top-color: #00b8e6;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -30.5px;
+  margin-bottom: -61px;
+}
+.error {
+  color: red;
+}

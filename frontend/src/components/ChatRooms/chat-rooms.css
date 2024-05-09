@@ -1,0 +1,124 @@
+.chatrooms-section {
+  width: 20vw;
+  position: relative;
+  overflow-y: auto;
+  background-color: var(--navbar-bg-color);
+}
+.chat-box-search {
+  width: calc(20vw - 55px);
+  height: 35px;
+  background-color: transparent;
+  font-size: 16px;
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  outline: none;
+  margin: 0 0 5px 0;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+.chat-room-container {
+  background-color: var(--user-chat-bubble-bg);
+  padding: 15px 0 15px 15px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.chat-room-container:hover {
+  background-color: var(--drop-down-color-hover);
+}
+.title {
+  font-size: 14px;
+}
+.id {
+  font-size: 10px;
+}
+.lec-name {
+  font-size: 11px;
+}
+.chat-rooms {
+  margin: 48px 0 0 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.144);
+}
+.chatroom-header {
+  display: flex;
+  justify-content: space-between;
+}
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+.toggle-btn svg {
+  color: white;
+  opacity: 0.8;
+}
+.create-new-chat-room {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.create-new-chat-room svg {
+  color: white;
+}
+.chat-room-head {
+  display: flex;
+  position: fixed;
+}
+.chatroom-body {
+  display: flex;
+  justify-content: space-between;
+}
+/* delete modal css */
+.delete-modal-container {
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.delete-form {
+  display: flex;
+  flex-direction: column;
+}
+.confirm-delete {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 5px;
+  outline: none;
+}
+.delete-btn {
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: var(--current-user-chat-bubble-bg);
+  cursor: pointer;
+}
+/* end delete modal */
+@media (max-width: 790px) {
+  .chatrooms-section {
+    display: var(--toggle-value);
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    width: 30vw;
+    background-color: var(--navbar-bg-color);
+    z-index: 5;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.192);
+    padding-right: 10px;
+  }
+  .chat-box-search {
+    width: 26.5vw;
+    margin: 0 0 5px 0;
+    padding: 10px;
+  }
+}

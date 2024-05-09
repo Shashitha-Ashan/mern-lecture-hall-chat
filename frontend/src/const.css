@@ -1,0 +1,90 @@
+:root {
+  /* dark theme data */
+  --main-bg-color-dark: #131314;
+  --navbar-bg-color-dark: #1e1f20;
+  --chat-nav-color-dark: #1e1f20;
+  --text-color-dark: #e3e3e3;
+  --user-chat-bubble-bg-dark: #13131452;
+  --receiver-chat-bubble-bg-dark: #3d3d41;
+  --current-user-chat-bubble-bg-dark: #20beff;
+  --accent-color-dark: #1e1f20;
+  --link-color-dark: #3498db;
+  --divider-color-dark: #555555;
+  --drop-down-color-dark: #233138;
+  --drop-down-color-hover-dark: #182229;
+  --drop-down-shadow-dark: 0 2px 5px 0 rgba(var(11, 20, 26), 0.26),
+    0 2px 10px 0 rgba(var(11, 20, 26), 0.16);
+  --user-profile-color-dark: purple;
+  --svg-color-dark: white;
+  --theme-svg-color-dark: white;
+  --hr-color-dark: #404244;
+
+  --show-toggle-value: block;
+  --hide-toggle-value: none;
+
+  /* light theme data */
+  --main-bg-color-light: #f0f0f0;
+  --navbar-bg-color-light: #20beff;
+  --chat-nav-color-light: #20beff;
+  --text-color-light: #202124;
+  --user-chat-bubble-bg-light: #57575714;
+  --receiver-chat-bubble-bg-light: #949899;
+  --current-user-chat-bubble-bg-light: #20beff;
+  --accent-color-light: #f0f0f0;
+  --link-color-light: #3498db;
+  --divider-color-light: #dddddd;
+  --drop-down-color-light: #ffffff;
+  --drop-down-color-hover-light: #dbd4d4;
+  --drop-down-shadow-light: 0 2px 5px 0 rgba(var(240, 240, 240), 0.26),
+    0 2px 10px 0 rgba(var(240, 240, 240), 0.16);
+  --user-profile-color-light: purple;
+  --svg-color-light: black;
+  --theme-svg-color-light: black;
+  --hr-color-light: #bcc9d6;
+}
+
+[data-theme="dark"] {
+  --main-bg-color: var(--main-bg-color-dark);
+  --navbar-bg-color: var(--navbar-bg-color-dark);
+  --chat-nav-color: var(--chat-nav-color-dark);
+  --text-color: var(--text-color-dark);
+  --user-chat-bubble-bg: var(--user-chat-bubble-bg-dark);
+  --receiver-chat-bubble-bg: var(--receiver-chat-bubble-bg-dark);
+  --current-user-chat-bubble-bg: var(--current-user-chat-bubble-bg-dark);
+  --accent-color: var(--accent-color-dark);
+  --link-color: var(--link-color-dark);
+  --divider-color: var(--divider-color-dark);
+  --drop-down-color: var(--drop-down-color-dark);
+  --drop-down-color-hover: var(--drop-down-color-hover-dark);
+  --drop-down-shadow: var(--drop-down-shadow-dark);
+  --user-profile-color: var(--user-profile-color-dark);
+  --svg-color: var(--svg-color-dark);
+  --theme-svg-color: var(--theme-svg-color-dark);
+  --hr-color: var(--hr-color-dark);
+}
+
+[data-theme="light"] {
+  --main-bg-color: var(--main-bg-color-light);
+  --navbar-bg-color: var(--navbar-bg-color-light);
+  --chat-nav-color: var(--chat-nav-color-light);
+  --text-color: var(--text-color-light);
+  --user-chat-bubble-bg: var(--user-chat-bubble-bg-light);
+  --receiver-chat-bubble-bg: var(--receiver-chat-bubble-bg-light);
+  --current-user-chat-bubble-bg: var(--current-user-chat-bubble-bg-light);
+  --accent-color: var(--accent-color-light);
+  --link-color: var(--link-color-light);
+  --divider-color: var(--divider-color-light);
+  --drop-down-color: var(--drop-down-color-light);
+  --drop-down-color-hover: var(--drop-down-color-hover-light);
+  --drop-down-shadow: var(--drop-down-shadow-light);
+  --user-profile-color: var(--user-profile-color-light);
+  --svg-color: var(--svg-color-light);
+  --theme-svg-color: var(--theme-svg-color-light);
+  --hr-color: var(--hr-color-light);
+}
+[res="show"] {
+  --toggle-value: var(--show-toggle-value);
+}
+[res="hide"] {
+  --toggle-value: var(--hide-toggle-value);
+}

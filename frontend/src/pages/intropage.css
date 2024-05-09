@@ -1,0 +1,24 @@
+.main-container-intro-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0 auto;
+}
+.main-container-intro-page div {
+  text-align: center;
+}
+.main-container-intro-page img {
+  width: 100px;
+  height: 80px;
+}
+.main-container-intro-page button {
+  text-align: center;
+  font-size: large;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: var(--current-user-chat-bubble-bg);
+  cursor: pointer;
+}

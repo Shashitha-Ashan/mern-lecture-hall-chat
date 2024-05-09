@@ -1,0 +1,77 @@
+.nav-bar nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  background-color: var(--navbar-bg-color);
+}
+
+.user {
+  width: 50px;
+  height: 50px;
+}
+.nav-bar img {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+.user-profile {
+  width: 50px;
+  text-align: center;
+  height: 50px;
+  background-color: var(--user-profile-color);
+  border-radius: 50%;
+  color: var(--text-color);
+  cursor: pointer;
+  margin-right: 20px;
+}
+.user-profile p {
+  font-size: 33px;
+}
+.nav-drop-down-menu {
+  width: 100px;
+  height: auto;
+  list-style: none;
+  position: absolute;
+  top: 55px;
+  left: calc(100% - 120px);
+  border-radius: 3px;
+  z-index: 1000;
+  background-color: var(--drop-down-color);
+  box-shadow: var(--drop-down-shadow);
+}
+.nav-drop-down-menu li {
+  cursor: pointer;
+  padding: 15px 0 15px 15px;
+}
+.nav-drop-down-menu li:hover {
+  background-color: var(--drop-down-hover-color);
+}
+.nav-btns {
+  display: flex;
+  gap: 10px;
+}
+.nav-btns .theme-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.nav-btns .theme-btn svg {
+  color: var(--theme-svg-color);
+}
+.chat-rooms-togggle {
+  display: none;
+}
+@media (max-width: 790px) {
+  .chat-rooms-togggle {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+    background-color: transparent;
+    border: none;
+  }
+  .nav-bar img {
+    display: none;
+  }
+}

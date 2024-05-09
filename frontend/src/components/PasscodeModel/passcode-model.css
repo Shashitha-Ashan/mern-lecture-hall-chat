@@ -1,0 +1,11 @@
+.model-container button {
+  cursor: pointer;
+}
+.passcode-header h2 {
+  font-size: 20px;
+}
+.passcode-box {
+  outline: none;
+  border-radius: 5px;
+  margin: 0;
+}

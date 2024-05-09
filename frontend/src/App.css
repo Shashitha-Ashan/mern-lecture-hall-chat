@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+@import url("const.css");
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+main {
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+hr {
+  border: none;
+  width: 2px;
+  color: var(--hr-color);
+  background-color: var(--hr-color);
+}
+@media (max-width: 790px) {
+  hr {
+    display: none;
+  }
+}
+/* * {
+  transition: all 0.1s cubic-bezier(1, -0.02, 1, 1);
+} */

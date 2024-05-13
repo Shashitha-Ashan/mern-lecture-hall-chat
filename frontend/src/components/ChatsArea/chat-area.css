@@ -43,7 +43,8 @@
   border-top: 1px solid var(--hr-color);
 }
 .chats-area {
-  background-image: url("bkg.svg");
+  /* background-image: url("bkg.svg"); */
+  background-image: var(--chat-area-bkg);
   margin: 10px;
   overflow-y: scroll;
 }

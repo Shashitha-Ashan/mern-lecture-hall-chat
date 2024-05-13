@@ -18,14 +18,15 @@
   --svg-color-dark: white;
   --theme-svg-color-dark: white;
   --hr-color-dark: #404244;
+  --chat-area-bkg-dark: url("chat-bkg-dark.svg");
 
   --show-toggle-value: block;
   --hide-toggle-value: none;
 
   /* light theme data */
-  --main-bg-color-light: #f0f0f0;
-  --navbar-bg-color-light: #20beff;
-  --chat-nav-color-light: #20beff;
+  --main-bg-color-light: #ffffff;
+  --navbar-bg-color-light: #f0f2f5;
+  --chat-nav-color-light: #f0f2f5;
   --text-color-light: #202124;
   --user-chat-bubble-bg-light: #57575714;
   --receiver-chat-bubble-bg-light: #949899;
@@ -41,6 +42,7 @@
   --svg-color-light: black;
   --theme-svg-color-light: black;
   --hr-color-light: #bcc9d6;
+  --chat-area-bkg-light: url("chat-bkg-light.svg");
 }
 
 [data-theme="dark"] {
@@ -61,6 +63,7 @@
   --svg-color: var(--svg-color-dark);
   --theme-svg-color: var(--theme-svg-color-dark);
   --hr-color: var(--hr-color-dark);
+  --chat-area-bkg: var(--chat-area-bkg-dark);
 }
 
 [data-theme="light"] {
@@ -81,6 +84,7 @@
   --svg-color: var(--svg-color-light);
   --theme-svg-color: var(--theme-svg-color-light);
   --hr-color: var(--hr-color-light);
+  --chat-area-bkg: var(--chat-area-bkg-light);
 }
 [res="show"] {
   --toggle-value: var(--show-toggle-value);

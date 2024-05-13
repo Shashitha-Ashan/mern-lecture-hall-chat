@@ -74,6 +74,19 @@ function ChatBubble({
     }
   }
   // end vote a message
+
+  // delete message
+
+  async function deleteMessage() {
+    if (confirm("Do you want to delete this message")) {
+      try {
+        const res = await api.delete(`/api/c/${messageId}`);
+        alert(res.data.message);
+      } catch (error) {
+        alert(error.response.data.error);
+      }
+    }
+  }
   return (
     <div
       className={
@@ -95,6 +108,7 @@ function ChatBubble({
           {dropDownMenu ? (
             <div className="drop-down-menu" ref={dropdownRef}>
               <li onClick={openCloseModel}>About</li>
+              <li onClick={deleteMessage}>Delete</li>
               <li onClick={voteMessage}>Vote</li>
               <li onClick={openCloseReportModal}>Report</li>
               <li

@@ -12,12 +12,12 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: process.env.CLIENT_URL,
   credentials: true,
 };
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL,
     methods: ["GET", "POST"],
   },
 });
@@ -67,15 +67,11 @@ io.on("connection", (socket) => {
   // Handle new message
   socket.on("sendMessage", async (data) => {
     const { roomId, content, sender } = data;
-    // const message = new Message({ content, sender, roomId });
-    // await message.save();
     io.to(roomId).emit("receiveMessage", data);
   });
 
   // Handle disconnection
-  socket.on("disconnect", () => {
-    // console.log("A user disconnected");
-  });
+  socket.on("disconnect", () => {});
 });
 
 server.listen(3000, () => {

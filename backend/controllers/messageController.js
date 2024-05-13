@@ -74,11 +74,19 @@ const updateMessageById = async (req, res) => {
 // Delete message by ID
 const deleteMessageById = async (req, res) => {
   try {
-    const deletedMessage = await Message.findByIdAndDelete(req.params.id);
-    if (!deletedMessage) {
-      return res.status(404).json({ error: "Message not found" });
+    const sender = await Message.findById(req.params.id).populate({
+      path: "sender",
+      select: "_id",
+    });
+    if (req.user._id === sender.sender._id.toString()) {
+      const deletedMessage = await Message.findByIdAndDelete(req.params.id);
+      if (!deletedMessage) {
+        return res.status(404).json({ error: "Message not found" });
+      }
+      res.json({ message: "Message deleted successfully" });
+    } else {
+      return res.status(401).json({ error: "You cannot delete this message" });
     }
-    res.json({ message: "Message deleted successfully" });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });

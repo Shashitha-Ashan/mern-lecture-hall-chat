@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
 function sendConfirmEmail(id, email) {
   const confirmationLink = `${process.env.URL}/api/user/confirm/${id}`;
   const mailOptions = {
-    from: "sakkalu8@gmail.com",
+    from: process.env.EMAIL,
     to: email,
     subject: "Confirmation Email",
     text: confirmationLink,

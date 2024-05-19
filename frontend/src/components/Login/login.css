@@ -1,3 +1,11 @@
+body {
+  background: linear-gradient(to bottom, #c5baa9, #605810);
+}
+
+h1 {
+  color: #5b2c6f;
+}
+
 .login-page-container form {
   display: flex;
   flex-direction: column;
@@ -11,42 +19,57 @@
   justify-content: center;
   height: 100vh;
 }
-.login-page-container {
-  background-color: var(--accent-color);
-  padding: 20px;
-  border-radius: 10%;
-}
+
 .login-page-container form input {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 10px;
-  border: none;
-  outline: none;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: linear-gradient(to bottom, #cddbe0, #dcecf0);
 }
+
+.login-page-container from input:focus {
+  outline: none;
+  border-color: #649bd4;
+}
+
 .login-page-container form button {
-  font-size: 1rem;
-  margin-top: 10px;
-  padding: 5px;
-  margin-bottom: 10px;
-  border-radius: 2px;
+  padding: 10px;
   border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: linear-gradient(to bottom, #4aa2c1, #2c636f);
+  color: #fff;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-.fogot-password {
-  font-size: 0.9rem;
-}
+.fogot-password,
 .signup {
+  margin-top: 10px;
   font-size: 0.9rem;
+  text-align: center;
+  color: #102033;
+  cursor: pointer;
+  font-weight: 500;
 }
+
+.forgot-password:hover,
+.signup:hover {
+  text-decoration: underline;
+  color: #02070e;
+}
+
 form a {
   text-decoration: none;
 }
 
 .login-page-container {
   position: relative;
-  background: #00b8e6;
-  border-radius: 0.4em;
+  background: linear-gradient(to bottom, #3253ca, #5b2c6f);
+  border-radius: 1em;
+  padding: 20px;
 }
 
 .login-page-container:after {
@@ -57,7 +80,7 @@ form a {
   width: 0;
   height: 0;
   border: 61px solid transparent;
-  border-top-color: #00b8e6;
+  border-top-color: #6e2b68;
   border-bottom: 0;
   border-left: 0;
   margin-left: -30.5px;
@@ -65,4 +88,26 @@ form a {
 }
 .error {
   color: red;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+  .login-page-container {
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-page-container form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    min-width: 200px;
+  }
 }

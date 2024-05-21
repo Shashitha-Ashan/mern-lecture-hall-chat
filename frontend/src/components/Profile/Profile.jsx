@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import "./profile.css";
-import { IoIosPerson } from "react-icons/io";
+import { BsPersonCircle } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -10,6 +10,16 @@ const api = axios.create({
 });
 function Profile() {
   const [user, setUser] = useState({});
+  // Capitalize the first letter of each word in the username
+  const capitalizeFun = (username) => {
+    if (typeof username !== "string" || username.trim() === "") {
+      return ""; // Return an empty string if username is not a string or empty
+    }
+    return username
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
 
   const getProfileData = async () => {
     try {
@@ -34,12 +44,15 @@ function Profile() {
   return (
     <div className="profile-container">
       <div className="profile-picture">
-        <IoIosPerson size="100px" />
+        <BsPersonCircle size="100px" />
       </div>
-      <div className="profile-details">
-        <h2>Name: {user.username}</h2>
-        <p>ID: {user.id}</p>
-        <p>Role: {user.role}</p>
+      <div>
+        <h2>{capitalizeFun(user.username)}</h2>
+
+        <div className="profile-details">
+          <p>ID: {user.id}</p>
+          <p>Role: {capitalizeFun(user.role)}</p>
+        </div>
       </div>
     </div>
   );

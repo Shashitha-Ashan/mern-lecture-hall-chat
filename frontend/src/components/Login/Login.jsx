@@ -84,7 +84,7 @@ function LoginPage() {
             value={password}
             required
           />
-          <Link to="#" className="fogot-password">
+          <Link to="/forgot-password" className="fogot-password">
             Forgot password ?
           </Link>
           <button type="submit">Login</button>

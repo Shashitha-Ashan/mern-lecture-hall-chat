@@ -5,8 +5,8 @@
   --chat-nav-color-dark: #1e1f20;
   --text-color-dark: #e3e3e3;
   --user-chat-bubble-bg-dark: #13131452;
-  --receiver-chat-bubble-bg-dark: #3d3d41;
-  --current-user-chat-bubble-bg-dark: #20beff;
+  --receiver-chat-bubble-bg-dark: #978100f5;
+  --current-user-chat-bubble-bg-dark: #00aa9cf4;
   --accent-color-dark: #1e1f20;
   --link-color-dark: #3498db;
   --divider-color-dark: #555555;
@@ -29,8 +29,8 @@
   --chat-nav-color-light: #f0f2f5;
   --text-color-light: #202124;
   --user-chat-bubble-bg-light: #57575714;
-  --receiver-chat-bubble-bg-light: #949899;
-  --current-user-chat-bubble-bg-light: #20beff;
+  --receiver-chat-bubble-bg-light: #c5cc76db;
+  --current-user-chat-bubble-bg-light: #16bcaef4;
   --accent-color-light: #f0f0f0;
   --link-color-light: #3498db;
   --divider-color-light: #dddddd;

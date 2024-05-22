@@ -1,3 +1,4 @@
+/* Base Styles */
 .chat-bubble {
   position: relative;
   max-width: 50%;
@@ -7,37 +8,57 @@
   border-radius: 0 30px 30px 30px;
   margin: 10px;
   padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+  transition: transform 0.3s ease; /* Adding a smooth transition effect */
 }
+
+/* Sender's Name Styles */
 .person-name {
   padding: 3px;
   filter: brightness(0.9);
+  font-weight: bold; /* Adding emphasis */
 }
+
 .person-name:hover {
   filter: brightness(1);
 }
+
+/* Message Container */
 .chat-bubble-about {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+/* Message Menu */
 .chat-bubble-menu {
   border: 0;
   background-color: transparent;
 }
+
+/* Message Content */
 .chat-bubble-message {
   padding: 5px;
   font-size: 1rem;
 }
+
+/* Message Container Flex Styles */
 .chat-bubble-container {
   display: flex;
 }
+
+/* Sender's Bubble Alignment */
 .current {
   justify-content: flex-end;
 }
+
+/* Sender's Bubble Styles */
 .current-bubble {
   background-color: var(--current-user-chat-bubble-bg);
   border-radius: 30px 0 30px 30px;
 }
+
+/* Drop-down Menu */
 .drop-down-menu {
   width: auto;
   height: auto;
@@ -50,23 +71,30 @@
   background-color: var(--drop-down-color);
   box-shadow: var(--drop-down-shadow);
 }
+
 .drop-down-menu li {
   cursor: pointer;
   padding: 15px 40px 15px 15px;
 }
+
 .drop-down-menu li:hover {
   background-color: var(--drop-down-color-hover);
 }
+
+/* Message Footer */
 .bubble-bottom {
   font-size: 0.8rem;
   padding: 2px;
   display: flex;
   justify-content: space-between;
 }
+
 .bubble-bottom svg {
   margin: 0;
   color: rgb(255, 81, 0);
 }
+
+/* Responsive Styles */
 @media (max-width: 790px) {
   .drop-down-menu {
     top: 32px;
@@ -78,12 +106,15 @@
     min-width: 20vw;
   }
 }
+
 @media (min-width: 1400px) and (max-width: 1920px) {
   .drop-down-menu {
     top: 32px;
     left: 60%;
   }
 }
+
+/* Button Styles */
 .button {
   text-align: center;
   border: none;
@@ -92,4 +123,12 @@
   padding: 10px;
   background-color: var(--current-user-chat-bubble-bg);
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Adding smooth transition */
+}
+
+.button:hover {
+  background-color: darken(
+    var(--current-user-chat-bubble-bg),
+    5%
+  ); /* Slightly darken on hover */
 }

@@ -19,6 +19,7 @@ function sendConfirmEmail(id, email) {
     subject: "Confirmation Email",
     text: confirmationLink,
   };
+
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
@@ -27,6 +28,7 @@ function sendConfirmEmail(id, email) {
     }
   });
 }
+
 const createToken = (_id) => {
   return jwt.sign({ _id }, process.env.SECRET_KEY, { expiresIn: "1d" });
 };
@@ -143,6 +145,59 @@ const confirmUser = async (req, res) => {
     });
   } catch (error) {}
 };
+
+function sendResetEmail(email, token) {
+  const resetLink = `${process.env.URL}/reset-password/${token}`;
+  console.log(resetLink);
+  const mailOptions = {
+    from: process.env.EMAIL,
+    to: email,
+    subject: "Password Reset Request",
+    html: `<p>You are receiving this email because you (or someone else) have requested the reset of the password for your account.</p>
+           <p>Please click on the following link to reset your password:</p>
+           <a href="${resetLink}">${resetLink}</a>
+           <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>`,
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+}
+
+const forgotPassword = async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    // Find user by email
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    // Generate a unique token for password reset
+    const token = jwt.sign({ _id: user._id }, process.env.SECRET_KEY, {
+      expiresIn: "1h",
+    });
+
+    // Save the token to the user document
+    user.resetToken = token;
+    await user.save();
+
+    // Send reset password email to the user
+    sendResetEmail(email, token);
+
+    res.status(200).json({ message: "Reset email sent successfully." });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ message: "Something went wrong." });
+  }
+};
+
 module.exports = {
   loginUser,
   changePassword,
@@ -151,4 +206,5 @@ module.exports = {
   getUserRole,
   reportUser,
   confirmUser,
+  forgotPassword,
 };

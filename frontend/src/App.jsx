@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import LoginPage from "./components/Login/Login";
 import Signup from "./Signup/Signup";
+import ForgotPasswordPage from "./components/Login/ForgotPasswordPage";
 import Home from "./Home";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import ProtetedRoute from "./Routes/ProtectedHomeRoute";
@@ -49,6 +50,7 @@ function App() {
           />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route
             path="/cpanel"
             element={

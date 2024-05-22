@@ -7,6 +7,7 @@ const {
   getUserRole,
   reportUser,
   confirmUser,
+  forgotPassword,
 } = require("../controllers/userController");
 const verifyToken = require("../middleware/userMiddleware");
 
@@ -19,5 +20,6 @@ router.post("/register", registerUser);
 router.get("/getrole", verifyToken, getUserRole);
 router.post("/reportuser", verifyToken, reportUser);
 router.get("/confirm/:id", confirmUser);
+router.post("/forgotpassword", forgotPassword);
 
 module.exports = router;

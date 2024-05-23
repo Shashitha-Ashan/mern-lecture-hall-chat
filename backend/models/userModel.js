@@ -42,6 +42,15 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  resetToken: {
+    type: String,
+    default: null,
+  },
+  resetTokenExpiration: {
+    type: Date,
+    default: null,
+  },
 });
 
 userSchema.statics.login = async function (email, password) {

@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
+const path = require("path");
 
 const corsOptions = {
   origin: process.env.CLIENT_URL,
@@ -21,6 +22,11 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+
+// Set EJS as the templating engine
+app.set("view engine", "ejs");
+// Set the directory where the EJS templates are located
+app.set("views", path.join(__dirname, "views"));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

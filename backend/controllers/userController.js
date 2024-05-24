@@ -2,6 +2,7 @@ const User = require("../models/userModel");
 const Report = require("../models/reportsModel");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
+const bcrypt = require("bcrypt");
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
@@ -147,7 +148,7 @@ const confirmUser = async (req, res) => {
 };
 
 function sendResetEmail(email, token) {
-  const resetLink = `${process.env.URL}/reset-password/${token}`;
+  const resetLink = `${process.env.URL}/api/user/resetpassword/${token}`;
   console.log(resetLink);
   const mailOptions = {
     from: process.env.EMAIL,
@@ -186,6 +187,7 @@ const forgotPassword = async (req, res) => {
 
     // Save the token to the user document
     user.resetToken = token;
+    user.resetTokenExpiration = new Date(Date.now() + 3600000);
     await user.save();
 
     // Send reset password email to the user
@@ -198,6 +200,65 @@ const forgotPassword = async (req, res) => {
   }
 };
 
+const resetPasswordVerify = async (req, res) => {
+  const { token } = req.params;
+
+  try {
+    // Find the user by the resetToken
+    const user = await User.findOne({ resetToken: token });
+    if (user && user.resetTokenExpiration > Date.now()) {
+      // Render the reset password page (assuming you're using a view engine like EJS, Pug, etc.)
+      res.render("reset-password", { token });
+    } else {
+      return res.status(400).json({ message: "Invalid or expired token." });
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(400).json({ message: "Invalid or expired token." });
+  }
+};
+
+const resetPassword = async (req, res) => {
+  const { token, password } = req.body;
+  const hashedPassword = await hashPassword(password);
+
+  try {
+    // Verify the token
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+
+    // Find the user by the token's user ID
+    const user = await User.findById(decoded._id);
+
+    if (!user || user.resetToken !== token) {
+      return res.status(400).json({ message: "Invalid or expired token." });
+    }
+
+    user.password = hashedPassword;
+    user.resetToken = undefined; // Clear the reset token
+    await user.save();
+
+    res.status(200).json({ message: "Password reset successful." });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(400).json({ message: "Invalid or expired token." });
+  }
+};
+
+const hashPassword = async (plainPassword) => {
+  try {
+    // Generate a salt to use for hashing
+    const salt = await bcrypt.genSalt(10); // You can adjust the salt rounds as needed (10 is a common value)
+
+    // Hash the plain password using the generated salt
+    const hashedPassword = await bcrypt.hash(plainPassword, salt);
+
+    return hashedPassword; // Return the hashed password
+  } catch (error) {
+    // Handle error appropriately (e.g., log or throw an error)
+    throw new Error("Password hashing failed");
+  }
+};
+
 module.exports = {
   loginUser,
   changePassword,
@@ -207,4 +268,6 @@ module.exports = {
   reportUser,
   confirmUser,
   forgotPassword,
+  resetPasswordVerify,
+  resetPassword,
 };

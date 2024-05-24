@@ -8,6 +8,8 @@ const {
   reportUser,
   confirmUser,
   forgotPassword,
+  resetPasswordVerify,
+  resetPassword,
 } = require("../controllers/userController");
 const verifyToken = require("../middleware/userMiddleware");
 
@@ -21,5 +23,7 @@ router.get("/getrole", verifyToken, getUserRole);
 router.post("/reportuser", verifyToken, reportUser);
 router.get("/confirm/:id", confirmUser);
 router.post("/forgotpassword", forgotPassword);
+router.get("/resetpassword/:token", resetPasswordVerify);
+router.post("/resetpassword", resetPassword);
 
 module.exports = router;

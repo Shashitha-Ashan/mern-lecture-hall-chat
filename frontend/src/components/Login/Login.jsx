@@ -22,6 +22,7 @@ function LoginPage() {
       setError("You are already logged");
     }
   }, [userData]);
+
   async function fetchUserData() {
     try {
       const response = await api.get("api/user/getrole");

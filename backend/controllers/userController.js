@@ -98,7 +98,7 @@ const getUsers = async (req, res) => {
 
 const getUserRole = async (req, res) => {
   try {
-    const token = req.cookies.credentials;
+    const token = await req.cookies.credentials;
     jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
       if (err) {
         return res.status(401).json({ message: "Unauthorized: Invalid token" });

@@ -1,5 +1,10 @@
-h1 {
-  color: #5b2c6f;
+.welcome {
+  color: #f47418;
+  font-size: 64px;
+  margin-bottom: 100px;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 5px 2px rgba(0, 0, 0, 0.2);
 }
 
 .login-page-container form {
@@ -7,6 +12,7 @@ h1 {
   flex-direction: column;
   width: 25vw;
   min-width: 200px;
+  margin-top: 10px;
 }
 .main-conatiner {
   display: flex;
@@ -16,27 +22,29 @@ h1 {
   height: 100vh;
 }
 
-.login-page-container form input {
+.login-page-container form input,
+select {
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
-  background: linear-gradient(to bottom, #cddbe0, #dcecf0);
+  background-color: #fff;
 }
 
 .login-page-container from input:focus {
   outline: none;
-  border-color: #649bd4;
+  border-color: #ffffff;
 }
 
 .login-page-container form button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
-  background: linear-gradient(to bottom, #4aa2c1, #2c636f);
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #1c589d, #009dff);
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -69,48 +77,35 @@ form a {
 }
 
 .login-page-container {
-  position: relative;
-  background: linear-gradient(to bottom, #3253ca, #5b2c6f);
+  background: linear-gradient(to bottom, #f47418, #ff6a00);
   border-radius: 1em;
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 80px;
 }
 
-.login-page-container:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border: 61px solid transparent;
-  border-top-color: #6e2b68;
-  border-bottom: 0;
-  border-left: 0;
-  margin-left: -30.5px;
-  margin-bottom: -61px;
-}
 .error {
   color: red;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 600px) {
-  .login-page-container {
-    width: 100%;
-    border-radius: 0;
-    box-shadow: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media only screen and (max-width: 600px) {
+  .welcome {
+    font-size: 32px;
+    margin-bottom: 50px;
+    text-align: center;
+    word-wrap: break-word;
   }
 
   .login-page-container form {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 25vw;
-    min-width: 200px;
+    width: 80vw;
+    min-width: unset;
+    margin-top: 5px;
+  }
+
+  .main-conatiner {
+    padding: 20px;
+  }
+
+  .login-page-container {
+    padding: 10px 10px 0 10px;
   }
 }

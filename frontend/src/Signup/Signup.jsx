@@ -44,7 +44,7 @@ function Signup() {
   }
   return (
     <div className="main-conatiner">
-      <h1>Welcome to the LH chat</h1>
+      <div className="welcome">Welcome to the LH Chat</div>
       {error !== null ? <div className="error">{error}</div> : ""}
       <div className="login-page-container">
         <form

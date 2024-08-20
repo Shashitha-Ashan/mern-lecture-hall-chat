@@ -23,14 +23,15 @@ function LoginPage() {
     }
   }, [userData]);
 
-  async function fetchUserData() {
+  const fetchUserData = async () => {
     try {
       const response = await api.get("api/user/getrole");
       return response.data;
     } catch (error) {
       return null;
     }
-  }
+  };
+
   const handleLogin = async () => {
     if (email != "" && password != "") {
       try {
@@ -38,6 +39,9 @@ function LoginPage() {
           email,
           password,
         });
+
+        console.log(response.status);
+
         if (response.status === 200) {
           const user = await fetchUserData();
           userDataUpdate(user);
@@ -56,9 +60,10 @@ function LoginPage() {
       setError("Email and Password should not empty");
     }
   };
+
   return (
     <div className="main-conatiner">
-      <h1>Welcome to the LH chat</h1>
+      <div className="welcome">Welcome to the LH Chat</div>
       {error !== null ? <div className="error">{error}</div> : ""}
       <div className="login-page-container">
         <form
@@ -84,6 +89,7 @@ function LoginPage() {
             }}
             value={password}
             required
+            autoComplete="true"
           />
           <Link to="/forgot-password" className="fogot-password">
             Forgot password ?

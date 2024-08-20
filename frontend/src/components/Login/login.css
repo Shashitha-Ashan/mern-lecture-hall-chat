@@ -1,5 +1,5 @@
 h1 {
-  color: #5b2c6f;
+  color: black;
 }
 
 .login-page-container form {
@@ -36,7 +36,7 @@ h1 {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
-  background: linear-gradient(to bottom, #4aa2c1, #2c636f);
+  background-color: #313d3d;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -44,7 +44,7 @@ h1 {
 .fogot-password {
   margin-bottom: 10px;
   font-size: 0.9rem;
-  color: #102033;
+  color: white;
   cursor: pointer;
   font-weight: 500;
 }
@@ -53,7 +53,7 @@ h1 {
   margin-top: 10px;
   font-size: 0.9rem;
   text-align: center;
-  color: #102033;
+  color: white;
   cursor: pointer;
   font-weight: 500;
 }
@@ -70,7 +70,7 @@ form a {
 
 .login-page-container {
   position: relative;
-  background: linear-gradient(to bottom, #3253ca, #5b2c6f);
+  background-color: #008080;
   border-radius: 1em;
   padding: 20px;
 }
@@ -83,7 +83,7 @@ form a {
   width: 0;
   height: 0;
   border: 61px solid transparent;
-  border-top-color: #6e2b68;
+  border-top-color: #008080;
   border-bottom: 0;
   border-left: 0;
   margin-left: -30.5px;

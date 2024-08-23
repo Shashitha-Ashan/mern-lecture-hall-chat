@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./chat-area.css";
 import ChatBubble from "../ChatBubble/ChatBubble";
-import { IoSendSharp } from "react-icons/io5";
+import { IoSendSharp, IoAttach } from "react-icons/io5";
 import { CiMenuKebab } from "react-icons/ci";
 import { FaLock } from "react-icons/fa";
 import { useUserData } from "../../Context/UserRoleContext";
@@ -186,18 +186,23 @@ function ChatsArea() {
                   setMessage(e.target.value);
                 }}
               />
-              <button
-                type="submit"
-                value="send"
-                className="submit-btn"
-                disabled={message === "" ? true : false}
-              >
-                {timer ? (
-                  <RxLapTimer size="30px" color="#DADADA" />
-                ) : (
-                  <IoSendSharp size="30px" color="#DADADA" />
-                )}
-              </button>
+              <div className="send-container">
+                <button
+                  type="submit"
+                  value="send"
+                  className="submit-btn"
+                  disabled={message === "" ? true : false}
+                >
+                  <button type="submit" value="send" className="submit-btn">
+                    <IoAttach size="30px" />
+                  </button>
+                  {timer ? (
+                    <RxLapTimer size="30px"  />
+                  ) : (
+                    <IoSendSharp size="30px"  />
+                  )}
+                </button>
+              </div>
             </form>
           ) : (
             <div className="block-chat">

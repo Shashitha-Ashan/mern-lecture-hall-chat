@@ -98,15 +98,10 @@ const getUsers = async (req, res) => {
 
 const getUserRole = async (req, res) => {
   try {
-    const token = req.cookies.credentials;
-    jwt.verify(token, process.env.SECRET_KEY, async (err, decoded) => {
-      if (err) {
-        return res.status(401).json({ message: "Unauthorized: Invalid token" });
-      }
-      const user = await User.getUserRole(decoded);
+      const user = await User.getUserRole(req.user);
       if (user) {
         await User.findByIdAndUpdate(
-          decoded,
+          req.user._id,
           { $set: { lastLogin: Date.now() } },
           { new: true }
         );
@@ -117,8 +112,8 @@ const getUserRole = async (req, res) => {
         id: user._id,
       };
       res.send(userCredintials);
-    });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Internal server error" });
   }
 };

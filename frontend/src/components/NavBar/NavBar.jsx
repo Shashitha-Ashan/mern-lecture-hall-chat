@@ -56,7 +56,7 @@ function NavBar() {
         >
           <GiHamburgerMenu size="35px" color="white" className="nav-icon" />
         </button>
-        <h1>LH Chat</h1>
+        <h2>LH Chat</h2>
         <div className="user-container">
           <div className="nav-btns">
             <div

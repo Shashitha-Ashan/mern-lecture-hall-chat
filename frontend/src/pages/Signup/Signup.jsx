@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import "../components/Login/login.css";
+import "../Login/login.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 

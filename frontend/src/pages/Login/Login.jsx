@@ -25,8 +25,10 @@ function LoginPage() {
   async function fetchUserData() {
     try {
       const response = await api.get("api/user/getrole");
+      
       return response.data;
     } catch (error) {
+      console.log(error)
       return null;
     }
   }

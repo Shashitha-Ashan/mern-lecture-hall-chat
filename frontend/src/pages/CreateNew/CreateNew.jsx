@@ -29,7 +29,7 @@ function CreateNew() {
   };
   return (
     <div className="main-conatiner">
-      <h1>Create a new Chat room</h1>
+      <h2>Create a new Chat room</h2>
       {error !== null ? <div className="error">{error}</div> : ""}
       <div className="login-page-container">
         <form
@@ -70,6 +70,7 @@ function CreateNew() {
             <option value="21/22">21/22</option>
             <option value="22/23">22/23</option>
           </select>
+          
           <button type="submit">Create</button>
         </form>
       </div>

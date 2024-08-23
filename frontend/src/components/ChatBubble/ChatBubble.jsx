@@ -122,7 +122,7 @@ function ChatBubble({
                   addQuestion(messageContent);
                 }}
               >
-                Add
+                Add Q
               </li>
             </div>
           ) : (

@@ -22,3 +22,6 @@
   background-color: var(--current-user-chat-bubble-bg);
   cursor: pointer;
 }
+.get-app{
+  color: aliceblue;
+}

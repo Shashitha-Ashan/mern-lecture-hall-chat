@@ -1,16 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import "./App.css";
-import LoginPage from "./components/Login/Login";
-import Signup from "./Signup/Signup";
-import ForgotPasswordPage from "./components/Login/ForgotPasswordPage";
+import LoginPage from "./pages/Login/Login";
+import Signup from "./pages/Signup/Signup";
+import ForgotPasswordPage from "./pages/Login/ForgotPasswordPage";
 import Home from "./Home";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import ProtetedRoute from "./Routes/ProtectedHomeRoute";
-import Profile from "./components/Profile/Profile";
-import CreateNew from "./components/CreateNew/CreateNew";
+import Profile from "./pages/Profile/Profile";
+import CreateNew from "./pages/CreateNew/CreateNew";
 import LecturerProtectedRoute from "./Routes/LecturerProtectedRoute";
-import AdminPanel from "./components/AdminPanel/AdminPanel";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import AdminRoute from "./Routes/AdminRoute";
 
 function App() {

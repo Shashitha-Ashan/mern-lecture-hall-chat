@@ -13,12 +13,12 @@ const { Server } = require("socket.io");
 const path = require("path");
 
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: "*",
   credentials: true,
 };
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });

@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import React from "react";
 import "./chat-rooms.css";
 import { useState, useEffect } from "react";
 import { FaArrowRightFromBracket } from "react-icons/fa6";
@@ -115,9 +112,9 @@ function ChatRoomComponent({ subject, _id, creator }) {
       }
     >
       <div className="chatroom-header">
-        <p className="title">Subject - {subject}</p>
+        <p className="title">{subject}</p>
         <button className="toggle-btn" onClick={chatRoomLoad}>
-          <FaArrowRightFromBracket size="20px" />
+          <FaArrowRightFromBracket size="20px" color="#3498db" />
         </button>
       </div>
       <div className="chatroom-body">

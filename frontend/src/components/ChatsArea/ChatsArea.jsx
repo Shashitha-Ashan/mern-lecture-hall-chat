@@ -13,6 +13,7 @@ import io from "socket.io-client";
 import axios from "axios";
 import { useChatId, useUpdateChatId } from "../../Context/ChatRoomContext";
 import { useDeleteQuestion, useGetQuestion } from "../../Context/qustionQueue";
+import FileUploadButton from "../UploadButton";
 
 const socket = io(import.meta.env.VITE_API_BASE_URL);
 
@@ -22,6 +23,7 @@ const api = axios.create({
 });
 
 function ChatsArea() {
+  const [file, setFile] = useState(null);
   const [chats, setChats] = useState([]);
   const [message, setMessage] = useState("");
   const [dropMenu, setDropMenu] = useState();
@@ -192,15 +194,20 @@ function ChatsArea() {
                   value="send"
                   className="submit-btn"
                   disabled={message === "" ? true : false}
+                  style={{ display: "flex", alignItems: "center" }}
                 >
-                  <button type="submit" value="send" className="submit-btn">
-                    <IoAttach size="30px" />
-                  </button>
-                  {timer ? (
-                    <RxLapTimer size="30px"  />
-                  ) : (
-                    <IoSendSharp size="30px"  />
-                  )}
+                  <span
+                    style={{ display: "inline-flex", alignItems: "center" }}
+                  >
+                    <FileUploadButton />
+                    <span style={{ marginLeft: "8px" }}>
+                      {timer ? (
+                        <RxLapTimer size="30px" />
+                      ) : (
+                        <IoSendSharp size="30px" />
+                      )}
+                    </span>
+                  </span>
                 </button>
               </div>
             </form>

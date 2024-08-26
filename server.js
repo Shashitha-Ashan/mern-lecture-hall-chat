@@ -53,6 +53,9 @@ app.use("/api/c", messagesRoutes);
 app.use("/api/rooms", chatroomsRoutes);
 app.use("/api/admin", adminRoutes);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+});
 // main routes
 app.get("/", verifyToken, (req, res) => {
   res.send("hari");
